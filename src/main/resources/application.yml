@@ -1,0 +1,26 @@
+spring:
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5433/test_docker_db
+    password: root
+    hikari:
+      maximumPoolSize: 5
+  jpa:
+    properties:
+        format_sql: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  pattern:
+  level:
+    org.hibernate.orm.jdbc.bind: trace
+
